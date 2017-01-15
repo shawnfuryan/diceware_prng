@@ -55,12 +55,11 @@ def passphrase(wordcount=6):
         exit()
         
 
-    filename = 'wordlist.json'
-    with open('wordlist.json') as f:
+    wordlist_file = 'wordlist.json'
+    with open('wordlist_file') as f:
         wordlist = json.load(f)
 
     passphrase = get_passphrase(wordcount, wordlist)
-    #print('%s' % ' '.join(map(str, passphrase)))
     click.echo('%s' % ' '.join(map(str, passphrase)))
 
 
