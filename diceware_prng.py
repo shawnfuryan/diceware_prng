@@ -26,10 +26,10 @@ def passphrase(wordcount=6):
     """
         diceware_prng.py: Generate strong passphrases without the dice.
 
-        Diceware_PRNG uses the excellent, nearly 8000 word strong Diceware dictionary
-        (see: diceware.org) and the cryptographically secure random number genrator
-        provided by many operating systems* (like Mac OSX, Windows 7+, Debian/Unbuntu/Mint,
-        Redhat/Fedora/CentOS, Arch/Manjaro, BSD, Solaris) to generate strong passphrases.
+        Diceware_PRNG uses the excellent, nearly 8000 word strong, collision-free Diceware
+        dictionary (see: diceware.org) along with python's os.SystemRandom() which uses the
+        system's cryptographically secure random number generator, /dev/urandom on most
+        unix-like systems, to generate strong passphrases.
 
         Each additional word in the passphrase adds around 12.5 bits of entropy, so scale
         your wordcount accordingly. The recommended minimum wordcount is 6, which yields
@@ -44,14 +44,6 @@ def passphrase(wordcount=6):
         operational security.  Also, this code has not been audited by security
         professionals, so use at your own risk. The authors of this program disclaim all
         liability associated with the use of this software.
-
-        *note: If not using one of these Operating Systems, it is up to the user to ensure
-        that their system provides a cryptographically secure random number generator
-        (usually /dev/urandom) that is compatible with python's os.urandom package. Using
-        this script in such an environment may yield insecure passwords. This program
-        has not necessarily been tested (recently or ever) on all of the listed Operating
-        Systems.
-
     """
 
     if wordcount < 6:
