@@ -63,7 +63,6 @@ def passphrase(wordcount=6):
     #print('%s' % ' '.join(map(str, passphrase)))
     click.echo('%s' % ' '.join(map(str, passphrase)))
 
-    return None
 
 if __name__ == '__main__':
     passphrase()
