@@ -5,7 +5,6 @@ setup(
     version='0.01',
     py_modules=['diceware_prng'],
     install_requires=[
-        'Pandas',
         'Click',
     ],
     entry_points='''
