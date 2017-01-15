@@ -56,7 +56,7 @@ def passphrase(wordcount=6):
         
 
     wordlist_file = 'wordlist.json'
-    with open('wordlist_file') as f:
+    with open(wordlist_file) as f:
         wordlist = json.load(f)
 
     passphrase = get_passphrase(wordcount, wordlist)
